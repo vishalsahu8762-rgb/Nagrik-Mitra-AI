@@ -14,7 +14,7 @@ export const Button = ({
   onClick,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-purple disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.99]';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 ease-out rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-purple disabled:opacity-50 disabled:cursor-not-allowed select-none hover:shadow-xs hover:scale-[1.01] active:scale-[0.99]';
 
   const variants = {
     primary: 'bg-brand-purple hover:bg-brand-purple-hover text-white shadow-sm',
@@ -47,9 +47,9 @@ export const Button = ({
         </>
       ) : (
         <>
-          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4 shrink-0" />}
+          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4 shrink-0 transition-transform duration-200 ease-out" />}
           <span>{children}</span>
-          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4 shrink-0" />}
+          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4 shrink-0 transition-transform duration-200 ease-out" />}
         </>
       )}
     </button>

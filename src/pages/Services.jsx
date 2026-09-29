@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import Button from '../components/Button';
 import { mockServices } from '../data/mockData';
+import { useTranslation } from '../context/LanguageContext';
 
 // Helper icon resolver
 const getServiceIcon = (iconName) => {
@@ -57,6 +58,19 @@ const getServiceIcon = (iconName) => {
   }
 };
 
+const categoryKeyMap = {
+  'All Services': 'category.all',
+  'Scholarships': 'category.scholarships',
+  'Certificates': 'category.certificates',
+  'Education': 'category.education',
+  'Employment': 'category.employment',
+  'Welfare Schemes': 'category.socialWelfare',
+  'Healthcare': 'category.healthcare',
+  'Documents': 'category.documents',
+  'Bills & Utilities': 'category.bills',
+  'Licenses': 'category.licenses',
+};
+
 export const Services = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialQuery = searchParams.get('query') || '';
@@ -65,6 +79,7 @@ export const Services = () => {
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const categories = [
     'All Services',
@@ -114,10 +129,10 @@ export const Services = () => {
           ================================================== */}
       <div>
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Find a Government Service
+          {t('services.title', 'Find a Government Service')}
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Choose a service or tell Nagrik Mitra what you need help with.
+          {t('services.subtitle', 'Choose a service or tell Nagrik Mitra what you need help with.')}
         </p>
       </div>
 
@@ -130,7 +145,7 @@ export const Services = () => {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search services, schemes or certificates…"
+          placeholder={t('services.searchPlaceholder', 'Search services, schemes or certificates…')}
           className="w-full pl-11 pr-10 py-3 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-teal-700 focus:ring-1 focus:ring-teal-700 transition-colors"
         />
         {searchQuery && (
@@ -153,14 +168,14 @@ export const Services = () => {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-base sm:text-lg font-bold text-slate-900">
-                Popular Schemes
+                {t('services.popularSchemes', 'Popular Schemes')}
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
                 Key national welfare programs available for citizen applications
               </p>
             </div>
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
-              Flagship Programs
+              {t('services.flagshipPrograms', 'Flagship Programs')}
             </span>
           </div>
 
@@ -168,7 +183,7 @@ export const Services = () => {
             {popularSchemes.map((scheme) => (
               <div
                 key={scheme.id}
-                className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex flex-col justify-between"
+                className="card-hover p-5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 flex flex-col justify-between"
               >
                 <div className="space-y-2.5">
                   <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200 text-teal-700 flex items-center justify-center">
@@ -184,7 +199,7 @@ export const Services = () => {
                   </p>
 
                   <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-500 space-y-1">
-                    <span className="font-semibold text-slate-700 block">Eligibility:</span>
+                    <span className="font-semibold text-slate-700 block">{t('services.eligibility', 'Eligibility')}:</span>
                     <p className="line-clamp-2 leading-relaxed text-slate-600">
                       {scheme.eligibilitySnippet}
                     </p>
@@ -198,7 +213,7 @@ export const Services = () => {
                     className="w-full text-xs"
                     onClick={() => navigate(`/services/${scheme.id}`)}
                   >
-                    View Details
+                    {t('services.viewDetails', 'View Details')}
                   </Button>
                 </div>
               </div>
@@ -213,10 +228,10 @@ export const Services = () => {
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base sm:text-lg font-bold text-slate-900">
-            Browse by Category
+            {t('services.browseByCategory', 'Browse by Category')}
           </h2>
           <span className="text-xs text-slate-500">
-            {filteredServices.length} {filteredServices.length === 1 ? 'Service' : 'Services'} Available
+            {filteredServices.length} {t('services.available', 'Available')}
           </span>
         </div>
 
@@ -231,7 +246,7 @@ export const Services = () => {
                   : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200'
               }`}
             >
-              {cat}
+              {t(categoryKeyMap[cat] || cat, cat)}
             </button>
           ))}
         </div>
@@ -241,23 +256,23 @@ export const Services = () => {
           SERVICE CARDS / EMPTY STATE
           ================================================== */}
       {filteredServices.length === 0 ? (
-        <div className="p-8 sm:p-12 rounded-2xl bg-white border border-slate-200 text-center space-y-4 shadow-sm">
+        <div className="card-hover p-8 sm:p-12 rounded-2xl bg-white border border-slate-200 text-center space-y-4 shadow-sm">
           <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
             <Search className="w-6 h-6" />
           </div>
 
           <div className="space-y-1">
             <h3 className="text-base font-bold text-slate-900">
-              No service found.
+              {t('services.noServiceFound', 'No service found.')}
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto">
-              Try a different search or ask Nagrik Mitra to guide you.
+              {t('services.noServiceSub', 'Try a different search or ask Nagrik Mitra to guide you.')}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
             <Button variant="secondary" size="sm" onClick={handleClearFilters}>
-              Clear Search
+              {t('services.clearSearch', 'Clear Search')}
             </Button>
             <Button
               variant="primary"
@@ -265,7 +280,7 @@ export const Services = () => {
               icon={Bot}
               onClick={() => navigate(`/assistant?query=${encodeURIComponent(searchQuery || 'Help me find a service')}`)}
             >
-              Ask Nagrik Mitra
+              {t('dashboard.askNagrikMitra', 'Ask Nagrik Mitra')}
             </Button>
           </div>
         </div>
@@ -274,7 +289,7 @@ export const Services = () => {
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex flex-col justify-between"
+              className="card-hover p-5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -282,7 +297,7 @@ export const Services = () => {
                     {getServiceIcon(service.icon)}
                   </div>
                   <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
-                    {service.category}
+                    {t(categoryKeyMap[service.category] || service.category, service.category)}
                   </span>
                 </div>
 
@@ -308,7 +323,7 @@ export const Services = () => {
                   iconPosition="right"
                   onClick={() => navigate(`/services/${service.id}`)}
                 >
-                  View Service
+                  {t('btn.view', 'View Service')}
                 </Button>
               </div>
             </div>

@@ -110,7 +110,7 @@ export const Grievances = () => {
       </div>
 
       {/* SLA Guarantee Banner */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start space-x-3.5 text-xs sm:text-sm text-slate-600">
+      <div className="card-hover p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start space-x-3.5 text-xs sm:text-sm text-slate-600">
         <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
         <div className="space-y-1">
           <span className="font-semibold text-slate-900">Guaranteed 30-Day Resolution</span>
@@ -121,7 +121,7 @@ export const Grievances = () => {
       </div>
 
       {/* Search and List */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+      <div className="card-hover p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
         <div className="relative">
           <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -147,7 +147,7 @@ export const Grievances = () => {
               return (
                 <div
                   key={grv.id}
-                  className="rounded-xl border border-slate-200 overflow-hidden transition-all bg-white"
+                  className="card-hover rounded-xl border border-slate-200 overflow-hidden bg-white"
                 >
                   <div
                     onClick={() => setExpandedId(isExpanded ? null : grv.id)}

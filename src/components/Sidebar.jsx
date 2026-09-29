@@ -15,23 +15,26 @@ import {
   ShieldAlert,
   X,
 } from 'lucide-react';
+import { useTranslation } from '../context/LanguageContext';
 
 export const Sidebar = ({ isOpen, onClose, isOfficer = false }) => {
+  const { t } = useTranslation();
+
   const citizenLinks = [
-    { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { to: '/services', label: 'Services & Schemes', icon: Grid },
-    { to: '/assistant', label: 'AI Assistant', icon: Bot },
-    { to: '/eligibility', label: 'Eligibility', icon: CheckCircle2 },
-    { to: '/documents', label: 'Documents', icon: FolderLock },
-    { to: '/applications', label: 'My Applications', icon: FileText },
-    { to: '/grievances', label: 'Grievances', icon: AlertCircle },
-    { to: '/profile', label: 'Profile', icon: User },
+    { to: '/dashboard', label: t('nav.dashboard', 'Dashboard'), icon: LayoutDashboard },
+    { to: '/services', label: t('nav.services', 'Services & Schemes'), icon: Grid },
+    { to: '/assistant', label: t('nav.assistant', 'AI Assistant'), icon: Bot },
+    { to: '/eligibility', label: t('nav.eligibility', 'Eligibility'), icon: CheckCircle2 },
+    { to: '/documents', label: t('nav.documents', 'Documents'), icon: FolderLock },
+    { to: '/applications', label: t('nav.applications', 'My Applications'), icon: FileText },
+    { to: '/grievances', label: t('nav.grievances', 'Grievances'), icon: AlertCircle },
+    { to: '/profile', label: t('nav.profile', 'Profile'), icon: User },
   ];
 
   const officerLinks = [
-    { to: '/officer', label: 'Officer Desk', icon: LayoutDashboard },
-    { to: '/officer/applications', label: 'Applications', icon: Inbox },
-    { to: '/officer/grievances', label: 'Grievance Queue', icon: ShieldAlert },
+    { to: '/officer', label: t('nav.officer', 'Officer Desk'), icon: LayoutDashboard },
+    { to: '/officer/applications', label: t('nav.applications', 'Applications'), icon: Inbox },
+    { to: '/officer/grievances', label: t('nav.grievances', 'Grievance Queue'), icon: ShieldAlert },
   ];
 
   const links = isOfficer ? officerLinks : citizenLinks;

@@ -92,7 +92,7 @@ export const Signup = () => {
 
       {/* Main Signup Card */}
       <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md px-4">
-        <div className="bg-white py-8 px-6 sm:px-8 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+        <div className="card-hover bg-white py-8 px-6 sm:px-8 rounded-2xl border border-slate-200 shadow-sm space-y-5">
           <form onSubmit={handleSignup} className="space-y-4">
             {/* Full Name */}
             <div>

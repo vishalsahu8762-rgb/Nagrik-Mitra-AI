@@ -339,7 +339,7 @@ export const Documents = () => {
             LEFT COLUMN: REQUIRED DOCUMENTS CHECKLIST SUMMARY
             ================================================== */}
         <div className="lg:col-span-1 space-y-4">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
+          <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
             <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
               <div>
                 <h2 className="text-base font-bold text-slate-900">
@@ -452,7 +452,7 @@ export const Documents = () => {
             {documents.map((doc) => (
               <div
                 key={doc.id}
-                className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4 hover:border-slate-300 transition-all"
+                className="card-hover p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4 hover:border-slate-300"
               >
                 {/* Header: Name and Status */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">

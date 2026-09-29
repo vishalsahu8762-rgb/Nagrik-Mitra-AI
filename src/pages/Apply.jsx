@@ -393,7 +393,7 @@ export const Apply = () => {
             DESKTOP SUMMARY PANEL (LEFT SIDEBAR)
             ================================================== */}
         <div className="lg:col-span-1 space-y-4">
-          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div className="card-hover p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
             <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 Application Checklist
@@ -485,7 +485,7 @@ export const Apply = () => {
               STAGE A: QUESTIONS (STEPS 1 TO 6)
               ================================================== */}
           {currentStep !== 'readiness' && submissionState === 'idle' && (
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
+            <div className="card-hover p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
               {/* Simple Visual Step Tracker: Application ●────○────○────○ (Step X of 6) */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs">
@@ -793,7 +793,7 @@ export const Apply = () => {
           {currentStep === 'readiness' && submissionState === 'idle' && (
             <div className="space-y-6">
               {/* 1. Readiness Header Card */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
+              <div className="card-hover p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
                 <div>
                   <div className="flex items-center justify-between gap-2">
                     <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -952,7 +952,7 @@ export const Apply = () => {
               {/* 2. Final Review Summary Section */}
               <div
                 ref={reviewRef}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5"
+                className="card-hover p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5"
               >
                 <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
                   <div>

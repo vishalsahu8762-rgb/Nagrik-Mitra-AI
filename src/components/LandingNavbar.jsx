@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ShieldCheck, Menu, X, ArrowRight } from 'lucide-react';
 import Button from './Button';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from '../context/LanguageContext';
 
 export const LandingNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleScrollTo = (id) => {
     setMobileMenuOpen(false);
@@ -27,14 +30,14 @@ export const LandingNavbar = () => {
             <div className="flex flex-col">
               <div className="flex items-center space-x-2">
                 <span className="text-base font-bold tracking-tight text-slate-900">
-                  NAGRIK MITRA
+                  {t('nav.brandTitle', 'NAGRIK MITRA')}
                 </span>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
                   AI
                 </span>
               </div>
               <span className="text-[11px] text-slate-500 font-medium">
-                Citizen Welfare Portal
+                {t('nav.brandSubtitle', 'National Welfare Services')}
               </span>
             </div>
           </Link>
@@ -45,7 +48,7 @@ export const LandingNavbar = () => {
               to="/services"
               className="hover:text-slate-900 transition-colors"
             >
-              Services
+              {t('nav.services', 'Services')}
             </Link>
             <a
               href="#how-it-works"
@@ -55,7 +58,7 @@ export const LandingNavbar = () => {
               }}
               className="hover:text-slate-900 transition-colors"
             >
-              How It Works
+              {t('nav.howItWorks', 'How It Works')}
             </a>
             <a
               href="#about"
@@ -65,26 +68,28 @@ export const LandingNavbar = () => {
               }}
               className="hover:text-slate-900 transition-colors"
             >
-              About
+              {t('nav.about', 'About')}
             </a>
           </nav>
 
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center space-x-3">
+            <LanguageSelector />
             <Link to="/login">
               <Button variant="ghost" size="sm">
-                Login
+                {t('nav.login', 'Login')}
               </Button>
             </Link>
             <Link to="/signup">
               <Button variant="primary" size="sm" icon={ArrowRight} iconPosition="right">
-                Get Started
+                {t('nav.signup', 'Get Started')}
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Hamburger Toggle & LanguageSelector */}
           <div className="flex md:hidden items-center space-x-2">
+            <LanguageSelector />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -105,7 +110,7 @@ export const LandingNavbar = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                Services
+                {t('nav.services', 'Services')}
               </Link>
               <a
                 href="#how-it-works"
@@ -115,7 +120,7 @@ export const LandingNavbar = () => {
                 }}
                 className="px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                How It Works
+                {t('nav.howItWorks', 'How It Works')}
               </a>
               <a
                 href="#about"
@@ -125,19 +130,19 @@ export const LandingNavbar = () => {
                 }}
                 className="px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                About
+                {t('nav.about', 'About')}
               </a>
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex flex-col space-y-2">
               <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="secondary" size="sm" className="w-full">
-                  Login
+                  {t('nav.login', 'Login')}
                 </Button>
               </Link>
               <Link to="/signup" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="primary" size="sm" className="w-full" icon={ArrowRight} iconPosition="right">
-                  Get Started
+                  {t('nav.signup', 'Get Started')}
                 </Button>
               </Link>
             </div>

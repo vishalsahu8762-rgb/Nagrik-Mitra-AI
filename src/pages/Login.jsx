@@ -86,7 +86,7 @@ export const Login = () => {
 
       {/* Main Login Card */}
       <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md px-4">
-        <div className="bg-white py-8 px-6 sm:px-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+        <div className="card-hover bg-white py-8 px-6 sm:px-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
           <form onSubmit={handleLogin} className="space-y-4">
             {/* Identifier Field: Email / Mobile */}
             <div>

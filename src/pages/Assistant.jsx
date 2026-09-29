@@ -168,7 +168,7 @@ export const Assistant = () => {
       </div>
 
       {/* Main Conversation Box */}
-      <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col h-[calc(100vh-13rem)] min-h-[440px] max-h-[720px]">
+      <div className="card-hover bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col h-[calc(100vh-13rem)] min-h-[440px] max-h-[720px]">
         {/* Messages Stream */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-slate-50/50">
           {messages.map((msg) => (

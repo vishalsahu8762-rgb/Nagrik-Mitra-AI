@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '../context/LanguageContext';
 
 const statusConfig = {
   submitted: {
@@ -93,6 +94,7 @@ export const StatusBadge = ({
   size = 'sm',
   className = '',
 }) => {
+  const { t } = useTranslation();
   const normalizedKey = String(status).toLowerCase().replace(/[\s-]/g, '_');
   const config = statusConfig[normalizedKey] || {
     label: status,
@@ -102,7 +104,8 @@ export const StatusBadge = ({
     dot: 'bg-slate-400',
   };
 
-  const displayText = label || config.label;
+  const translatedLabel = t(`status.${normalizedKey}`, config.label);
+  const displayText = label || translatedLabel;
   const isSm = size === 'sm';
 
   return (

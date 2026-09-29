@@ -3,15 +3,15 @@ import React from 'react';
 export const Card = ({
   children,
   className = '',
-  hoverable = false,
+  hoverable = true,
   onClick,
   ...props
 }) => {
   return (
     <div
       onClick={onClick}
-      className={`bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 transition-all duration-150 ${
-        hoverable ? 'hover:border-slate-300 hover:shadow-sm cursor-pointer' : ''
+      className={`card-hover bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 ${
+        hoverable || onClick ? 'cursor-pointer hover:border-slate-300' : ''
       } ${className}`}
       {...props}
     >

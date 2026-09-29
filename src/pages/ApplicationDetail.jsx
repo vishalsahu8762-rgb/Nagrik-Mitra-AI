@@ -149,7 +149,7 @@ export const ApplicationDetail = () => {
       </div>
 
       {/* Main Details Header Card */}
-      <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
+      <div className="card-hover p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-4 border-b border-slate-100">
           <div>
             <div className="flex items-center space-x-3 mb-1">
@@ -218,7 +218,7 @@ export const ApplicationDetail = () => {
       {/* Two columns: Attached Documents & Timeline */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Verification Documents */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <h3 className="text-base font-bold text-slate-900">Attached Documents</h3>
             <span className="text-xs text-slate-400">{app.documents.length} Files</span>
@@ -247,7 +247,7 @@ export const ApplicationDetail = () => {
         </div>
 
         {/* Timeline */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <h3 className="text-base font-bold text-slate-900">Application Timeline</h3>
             <span className="text-xs text-slate-400">Step by Step</span>
@@ -269,7 +269,7 @@ export const ApplicationDetail = () => {
       </div>
 
       {/* Grievance Link */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs sm:text-sm text-slate-600">
+      <div className="card-hover p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs sm:text-sm text-slate-600">
         <span>Facing an undue delay or issue with this application?</span>
         <Button
           variant="secondary"

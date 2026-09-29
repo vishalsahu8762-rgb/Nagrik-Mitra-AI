@@ -13,12 +13,15 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { useToast } from '../context/ToastContext';
+import { useTranslation } from '../context/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 import { mockUser, mockOfficer } from '../data/mockData';
 
 export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
 
@@ -61,7 +64,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
               <div className="flex flex-col">
                 <div className="flex items-center space-x-2">
                   <span className="text-base font-bold tracking-tight text-slate-900">
-                    NAGRIK MITRA
+                    {t('nav.brandTitle', 'NAGRIK MITRA')}
                   </span>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
                     AI
@@ -73,7 +76,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                   )}
                 </div>
                 <span className="text-[11px] text-slate-500 font-medium">
-                  नागरिक मित्र • National Welfare Services
+                  {t('nav.brandSubtitle', 'National Welfare Services')}
                 </span>
               </div>
             </Link>
@@ -89,7 +92,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Services
+              {t('nav.services', 'Services')}
             </Link>
             <Link
               to="/assistant"
@@ -99,7 +102,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              AI Assistant
+              {t('nav.assistant', 'AI Assistant')}
             </Link>
             <Link
               to="/eligibility"
@@ -109,7 +112,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Eligibility
+              {t('nav.eligibility', 'Eligibility')}
             </Link>
             <Link
               to="/grievances"
@@ -119,12 +122,15 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Grievances
+              {t('nav.grievances', 'Grievances')}
             </Link>
           </nav>
 
-          {/* Right section: Switch Portal + Notifications + User Menu */}
+          {/* Right section: Language Selector + Switch Portal + Notifications + User Menu */}
           <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* Language Selector in Header */}
+            <LanguageSelector />
+
             {/* Quick Switch Mode Button */}
             <button
               onClick={handlePortalSwitch}
@@ -132,7 +138,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
               title="Switch between Citizen and Officer interfaces"
             >
               <Building2 className="w-3.5 h-3.5 text-teal-700" />
-              <span>{isOfficer ? 'Citizen Portal' : 'Officer Desk'}</span>
+              <span>{isOfficer ? t('nav.citizenPortal', 'Citizen Portal') : t('nav.officer', 'Officer Desk')}</span>
             </button>
 
             {/* Notification Bell */}
@@ -217,7 +223,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                       {currentUser.name}
                     </div>
                     <div className="text-[11px] text-slate-500 truncate">
-                      {isOfficer ? currentUser.designation : 'Aadhaar Verified Citizen'}
+                      {isOfficer ? currentUser.designation : t('nav.verifiedCitizen', 'Aadhaar Verified Citizen')}
                     </div>
                   </div>
                   <div className="py-1">
@@ -227,7 +233,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                       className="flex items-center space-x-2 px-4 py-2 text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                     >
                       <User className="w-3.5 h-3.5" />
-                      <span>Citizen Profile</span>
+                      <span>{t('nav.citizenProfile', 'Citizen Profile')}</span>
                     </Link>
                     <Link
                       to="/documents"
@@ -235,7 +241,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                       className="flex items-center space-x-2 px-4 py-2 text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                     >
                       <FileCheck2 className="w-3.5 h-3.5" />
-                      <span>DigiLocker Records</span>
+                      <span>{t('nav.digilocker', 'DigiLocker Records')}</span>
                     </Link>
                     <Link
                       to="/login"
@@ -246,7 +252,7 @@ export const Navbar = ({ onToggleSidebar, isOfficer = false }) => {
                       className="flex items-center space-x-2 px-4 py-2 text-xs text-rose-600 hover:bg-rose-50"
                     >
                       <LogOut className="w-3.5 h-3.5" />
-                      <span>Sign In / Switch Account</span>
+                      <span>{t('nav.logout', 'Sign In / Switch Account')}</span>
                     </Link>
                   </div>
                 </div>

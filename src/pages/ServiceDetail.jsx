@@ -59,7 +59,7 @@ export const ServiceDetail = () => {
       </div>
 
       {/* Hero Overview Card */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
+      <div className="card-hover p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-slate-100">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
@@ -101,7 +101,7 @@ export const ServiceDetail = () => {
       {/* Two Column Grid: Who Can Use It & Basic Requirements */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Section: Who Can Use It */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
           <div className="flex items-center space-x-2.5 pb-2 border-b border-slate-100">
             <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700">
               <UserCheck className="w-4 h-4" />
@@ -120,7 +120,7 @@ export const ServiceDetail = () => {
         </div>
 
         {/* Section: Basic Requirements */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
           <div className="flex items-center space-x-2.5 pb-2 border-b border-slate-100">
             <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700">
               <CheckCircle2 className="w-4 h-4" />
@@ -140,7 +140,7 @@ export const ServiceDetail = () => {
       </div>
 
       {/* Section: Required Documents */}
-      <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+      <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-slate-100">
           <div className="flex items-center space-x-2.5">
             <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700">
@@ -169,7 +169,7 @@ export const ServiceDetail = () => {
       </div>
 
       {/* Section: Estimated Process */}
-      <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+      <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
         <div className="pb-2 border-b border-slate-100">
           <h2 className="text-base font-bold text-slate-900">Estimated process</h2>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -195,7 +195,7 @@ export const ServiceDetail = () => {
       </div>
 
       {/* Section: Important Information */}
-      <div className="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/90 flex items-start space-x-3.5 text-xs sm:text-sm text-amber-900">
+      <div className="card-hover p-5 rounded-2xl bg-amber-50/70 border border-amber-200/90 flex items-start space-x-3.5 text-xs sm:text-sm text-amber-900">
         <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
         <div className="space-y-1">
           <h3 className="font-bold text-amber-950">Important information</h3>
@@ -206,7 +206,7 @@ export const ServiceDetail = () => {
       </div>
 
       {/* Action Footer Bar */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="card-hover p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
         <button
           type="button"
           onClick={() => navigate('/services')}

@@ -53,7 +53,7 @@ export const Profile = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column: Identity Snapshot */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center text-center">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center text-center">
           <div className="w-20 h-20 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center text-2xl font-bold mb-4 shadow-xs">
             RK
           </div>
@@ -92,7 +92,7 @@ export const Profile = () => {
         {/* Right Column: Contact & Bank Mandates (2 cols) */}
         <div className="lg:col-span-2 space-y-6">
           {/* Address & Contact */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <h3 className="text-base font-bold text-slate-900">Residential Address & Contact</h3>
               <span className="text-xs text-teal-700 font-medium">Varanasi Sadar Block</span>
@@ -136,7 +136,7 @@ export const Profile = () => {
           </div>
 
           {/* NPCI Bank Accounts */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center space-x-2">
                 <CreditCard className="w-4 h-4 text-emerald-600" />
@@ -160,7 +160,7 @@ export const Profile = () => {
           </div>
 
           {/* Household Family Members */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center space-x-2">
                 <Users className="w-4 h-4 text-teal-700" />

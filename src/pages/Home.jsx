@@ -145,7 +145,7 @@ export const Home = () => {
 
                   {/* Active Application Preview Cards */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                    <div className="p-3.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
+                    <div className="card-hover p-3.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center space-x-2">
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
@@ -159,7 +159,7 @@ export const Home = () => {
                       <span className="text-xs text-teal-700 font-semibold">View →</span>
                     </div>
 
-                    <div className="p-3.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
+                    <div className="card-hover p-3.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center space-x-2">
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
@@ -195,7 +195,7 @@ export const Home = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Step 1 */}
-              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
+              <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 font-bold text-sm flex items-center justify-center">
                     1
@@ -213,7 +213,7 @@ export const Home = () => {
               </div>
 
               {/* Step 2 */}
-              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
+              <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 font-bold text-sm flex items-center justify-center">
                     2
@@ -231,7 +231,7 @@ export const Home = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
+              <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 font-bold text-sm flex items-center justify-center">
                     3
@@ -249,7 +249,7 @@ export const Home = () => {
               </div>
 
               {/* Step 4 */}
-              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
+              <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 font-bold text-sm flex items-center justify-center">
                     4
@@ -296,11 +296,11 @@ export const Home = () => {
               {/* Card 1: Scholarships */}
               <div
                 onClick={() => navigate('/services?category=Education')}
-                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all flex flex-col justify-between group"
+                className="card-hover p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/80 text-teal-800 flex items-center justify-center">
-                    <GraduationCap className="w-5 h-5 text-teal-700" />
+                    <GraduationCap className="w-5 h-5 text-teal-700 transition-transform duration-200 group-hover:scale-110" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
                     Scholarships
@@ -318,11 +318,11 @@ export const Home = () => {
               {/* Card 2: Certificates */}
               <div
                 onClick={() => navigate('/services?category=Certificates')}
-                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all flex flex-col justify-between group"
+                className="card-hover p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/80 text-teal-800 flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-teal-700" />
+                    <FileText className="w-5 h-5 text-teal-700 transition-transform duration-200 group-hover:scale-110" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
                     Certificates
@@ -340,11 +340,11 @@ export const Home = () => {
               {/* Card 3: Employment */}
               <div
                 onClick={() => navigate('/services?category=Employment')}
-                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all flex flex-col justify-between group"
+                className="card-hover p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/80 text-teal-800 flex items-center justify-center">
-                    <Briefcase className="w-5 h-5 text-teal-700" />
+                    <Briefcase className="w-5 h-5 text-teal-700 transition-transform duration-200 group-hover:scale-110" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
                     Employment
@@ -362,11 +362,11 @@ export const Home = () => {
               {/* Card 4: Welfare Schemes */}
               <div
                 onClick={() => navigate('/services?category=Social%20Welfare')}
-                className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all flex flex-col justify-between group"
+                className="card-hover p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/80 text-teal-800 flex items-center justify-center">
-                    <HeartHandshake className="w-5 h-5 text-teal-700" />
+                    <HeartHandshake className="w-5 h-5 text-teal-700 transition-transform duration-200 group-hover:scale-110" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
                     Welfare Schemes
@@ -397,19 +397,19 @@ export const Home = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
-              <div className="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+              <div className="card-hover p-4 rounded-xl bg-white border border-slate-200 space-y-1">
                 <div className="text-sm font-bold text-slate-900">Simple & Trustworthy</div>
                 <p className="text-xs text-slate-500">
                   Clean interface with clear guidance in everyday language.
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+              <div className="card-hover p-4 rounded-xl bg-white border border-slate-200 space-y-1">
                 <div className="text-sm font-bold text-slate-900">DigiLocker Integration</div>
                 <p className="text-xs text-slate-500">
                   Instant paperless verification from official state records.
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+              <div className="card-hover p-4 rounded-xl bg-white border border-slate-200 space-y-1">
                 <div className="text-sm font-bold text-slate-900">Guaranteed SLAs</div>
                 <p className="text-xs text-slate-500">
                   Statutory redressal backed by CPGRAMS public grievance rules.

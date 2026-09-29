@@ -49,7 +49,7 @@ export const OfficerDashboard = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div
           onClick={() => navigate('/officer/applications')}
-          className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all"
+          className="card-hover p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-slate-500">Pending Scrutiny</span>
@@ -63,7 +63,7 @@ export const OfficerDashboard = () => {
 
         <div
           onClick={() => navigate('/officer/applications')}
-          className="p-5 rounded-2xl bg-white border border-rose-200 hover:shadow-sm cursor-pointer transition-all"
+          className="card-hover p-5 rounded-2xl bg-white border border-rose-200 cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-rose-700">SLA Breach Risk</span>
@@ -77,7 +77,7 @@ export const OfficerDashboard = () => {
 
         <div
           onClick={() => navigate('/officer/grievances')}
-          className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm cursor-pointer transition-all"
+          className="card-hover p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-slate-500">CPGRAMS Dockets</span>
@@ -89,7 +89,7 @@ export const OfficerDashboard = () => {
           <p className="text-[11px] text-slate-400 mt-1">District monitoring</p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <div className="card-hover p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-slate-500">Sanctioned This Month</span>
             <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
@@ -104,7 +104,7 @@ export const OfficerDashboard = () => {
       {/* Work Queues Split */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Scrutiny Queue */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <h3 className="text-base font-bold text-slate-900">Pending Application Scrutiny</h3>
             <Link to="/officer/applications" className="text-xs text-teal-700 hover:text-teal-800 font-semibold">
@@ -117,7 +117,7 @@ export const OfficerDashboard = () => {
               <div
                 key={app.id}
                 onClick={() => navigate(`/officer/application/${app.id}`)}
-                className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 cursor-pointer transition-all"
+                className="card-hover-sm p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 cursor-pointer"
               >
                 <div className="flex items-center justify-between text-xs mb-1">
                   <span className="font-mono text-slate-600 font-bold">{app.id}</span>
@@ -134,7 +134,7 @@ export const OfficerDashboard = () => {
         </div>
 
         {/* Priority Grievance Desk */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <div className="card-hover p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <h3 className="text-base font-bold text-slate-900">CPGRAMS Grievance Dockets</h3>
             <Link to="/officer/grievances" className="text-xs text-teal-700 hover:text-teal-800 font-semibold">
@@ -147,7 +147,7 @@ export const OfficerDashboard = () => {
               <div
                 key={grv.id}
                 onClick={() => navigate('/officer/grievances')}
-                className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 cursor-pointer transition-all"
+                className="card-hover-sm p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 cursor-pointer"
               >
                 <div className="flex items-center justify-between text-xs mb-1">
                   <span className="font-mono text-slate-600 font-bold">{grv.id}</span>

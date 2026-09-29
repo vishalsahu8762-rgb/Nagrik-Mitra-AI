@@ -275,7 +275,7 @@ export const Eligibility = () => {
           STEP-BY-STEP WIZARD (Steps 1 to 7)
           ================================================== */}
       {currentStep !== 'result' && (
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8 space-y-6">
+        <div className="card-hover bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8 space-y-6">
           {/* Progress Indicator */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs">
@@ -701,7 +701,7 @@ export const Eligibility = () => {
             {eligibleSchemes.map((scheme) => (
               <div
                 key={scheme.id}
-                className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 hover:border-slate-300 transition-all"
+                className="card-hover p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 hover:border-slate-300"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
                   <div>
@@ -801,7 +801,7 @@ export const Eligibility = () => {
                 {notEligibleSchemes.map((scheme) => (
                   <div
                     key={scheme.id}
-                    className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
+                    className="card-hover p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2">
